@@ -1,0 +1,23 @@
+paths:
+  /api/appointments:
+    post:
+      summary: Book appointment
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                slotId:
+                  type: string
+
+  /api/appointments/{id}:
+    delete:
+      summary: Cancel appointment
+
+  /api/appointments/{id}/reschedule:
+    put:
+      summary: Reschedule appointment
